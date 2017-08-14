@@ -27,6 +27,7 @@ Partial Class frmResults
         Me.lblResults = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnDisplay = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblDrivers
@@ -68,22 +69,32 @@ Partial Class frmResults
         Me.btnExit.Location = New System.Drawing.Point(494, 402)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
-        Me.btnExit.TabIndex = 4
-        Me.btnExit.Text = "Exit"
+        Me.btnExit.TabIndex = 3
+        Me.btnExit.Text = "E&xit"
         Me.btnExit.UseVisualStyleBackColor = True
+        '
+        'btnDisplay
+        '
+        Me.btnDisplay.Location = New System.Drawing.Point(34, 402)
+        Me.btnDisplay.Name = "btnDisplay"
+        Me.btnDisplay.Size = New System.Drawing.Size(111, 23)
+        Me.btnDisplay.TabIndex = 2
+        Me.btnDisplay.Text = "&Display"
+        Me.btnDisplay.UseVisualStyleBackColor = True
         '
         'frmResults
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(581, 437)
+        Me.Controls.Add(Me.btnDisplay)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.lblResults)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.lblDrivers)
         Me.Name = "frmResults"
-        Me.Text = "frmResults"
+        Me.Text = "Results"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -94,4 +105,5 @@ Partial Class frmResults
     Friend WithEvents lblResults As Label
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents btnExit As Button
+    Friend WithEvents btnDisplay As Button
 End Class

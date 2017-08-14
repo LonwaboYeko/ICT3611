@@ -23,6 +23,9 @@ Partial Class frmMember
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnFind = New System.Windows.Forms.Button()
+        Me.txtMembershipnumber = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtFeesDue = New System.Windows.Forms.TextBox()
         Me.lblFeesDue = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -37,12 +40,12 @@ Partial Class frmMember
         Me.lblName = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnEvents = New System.Windows.Forms.Button()
+        Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtMembershipnumber = New System.Windows.Forms.TextBox()
-        Me.btnFind = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -71,12 +74,37 @@ Partial Class frmMember
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
+        'btnFind
+        '
+        Me.btnFind.Location = New System.Drawing.Point(275, 25)
+        Me.btnFind.Name = "btnFind"
+        Me.btnFind.Size = New System.Drawing.Size(75, 23)
+        Me.btnFind.TabIndex = 11
+        Me.btnFind.Text = "&Find"
+        Me.btnFind.UseVisualStyleBackColor = True
+        '
+        'txtMembershipnumber
+        '
+        Me.txtMembershipnumber.Location = New System.Drawing.Point(119, 27)
+        Me.txtMembershipnumber.Name = "txtMembershipnumber"
+        Me.txtMembershipnumber.Size = New System.Drawing.Size(150, 20)
+        Me.txtMembershipnumber.TabIndex = 10
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 30)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(107, 13)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "Membership Number:"
+        '
         'txtFeesDue
         '
         Me.txtFeesDue.Location = New System.Drawing.Point(359, 167)
         Me.txtFeesDue.Name = "txtFeesDue"
         Me.txtFeesDue.Size = New System.Drawing.Size(150, 20)
-        Me.txtFeesDue.TabIndex = 12
+        Me.txtFeesDue.TabIndex = 7
         '
         'lblFeesDue
         '
@@ -92,7 +120,7 @@ Partial Class frmMember
         Me.DateTimePicker2.Location = New System.Drawing.Point(359, 124)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker2.TabIndex = 10
+        Me.DateTimePicker2.TabIndex = 6
         '
         'Label1
         '
@@ -109,7 +137,7 @@ Partial Class frmMember
         Me.rdoFemale.Location = New System.Drawing.Point(413, 78)
         Me.rdoFemale.Name = "rdoFemale"
         Me.rdoFemale.Size = New System.Drawing.Size(59, 17)
-        Me.rdoFemale.TabIndex = 8
+        Me.rdoFemale.TabIndex = 5
         Me.rdoFemale.TabStop = True
         Me.rdoFemale.Text = "Female"
         Me.rdoFemale.UseVisualStyleBackColor = True
@@ -120,7 +148,7 @@ Partial Class frmMember
         Me.rdoMale.Location = New System.Drawing.Point(359, 78)
         Me.rdoMale.Name = "rdoMale"
         Me.rdoMale.Size = New System.Drawing.Size(48, 17)
-        Me.rdoMale.TabIndex = 7
+        Me.rdoMale.TabIndex = 4
         Me.rdoMale.TabStop = True
         Me.rdoMale.Text = "Male"
         Me.rdoMale.UseVisualStyleBackColor = True
@@ -139,7 +167,7 @@ Partial Class frmMember
         Me.DateTimePicker1.Location = New System.Drawing.Point(69, 170)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 5
+        Me.DateTimePicker1.TabIndex = 3
         '
         'lblDOB
         '
@@ -155,7 +183,7 @@ Partial Class frmMember
         Me.txtSurname.Location = New System.Drawing.Point(119, 124)
         Me.txtSurname.Name = "txtSurname"
         Me.txtSurname.Size = New System.Drawing.Size(150, 20)
-        Me.txtSurname.TabIndex = 3
+        Me.txtSurname.TabIndex = 2
         '
         'lblSurname
         '
@@ -180,12 +208,15 @@ Partial Class frmMember
         Me.txtName.Location = New System.Drawing.Point(119, 78)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(150, 20)
-        Me.txtName.TabIndex = 0
+        Me.txtName.TabIndex = 1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnDelete)
+        Me.GroupBox2.Controls.Add(Me.btnEvents)
+        Me.GroupBox2.Controls.Add(Me.btnEdit)
         Me.GroupBox2.Controls.Add(Me.btnClear)
-        Me.GroupBox2.Controls.Add(Me.btnSave)
+        Me.GroupBox2.Controls.Add(Me.btnAdd)
         Me.GroupBox2.Controls.Add(Me.btnExit)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 262)
         Me.GroupBox2.Name = "GroupBox2"
@@ -193,57 +224,59 @@ Partial Class frmMember
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         '
+        'btnDelete
+        '
+        Me.btnDelete.Location = New System.Drawing.Point(350, 12)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.TabIndex = 15
+        Me.btnDelete.Text = "&Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'btnEvents
+        '
+        Me.btnEvents.Location = New System.Drawing.Point(269, 12)
+        Me.btnEvents.Name = "btnEvents"
+        Me.btnEvents.Size = New System.Drawing.Size(75, 23)
+        Me.btnEvents.TabIndex = 14
+        Me.btnEvents.Text = "Events"
+        Me.btnEvents.UseVisualStyleBackColor = True
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Location = New System.Drawing.Point(26, 12)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(75, 23)
+        Me.btnEdit.TabIndex = 12
+        Me.btnEdit.Text = "&Edit"
+        Me.btnEdit.UseVisualStyleBackColor = True
+        '
         'btnClear
         '
         Me.btnClear.Location = New System.Drawing.Point(107, 12)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 23)
-        Me.btnClear.TabIndex = 2
-        Me.btnClear.Text = "Clear"
+        Me.btnClear.TabIndex = 9
+        Me.btnClear.Text = "&Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
-        'btnSave
+        'btnAdd
         '
-        Me.btnSave.Location = New System.Drawing.Point(188, 12)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 1
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnAdd.Location = New System.Drawing.Point(188, 12)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd.TabIndex = 8
+        Me.btnAdd.Text = "&Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'btnExit
         '
         Me.btnExit.Location = New System.Drawing.Point(483, 10)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
-        Me.btnExit.TabIndex = 0
-        Me.btnExit.Text = "Exit"
+        Me.btnExit.TabIndex = 13
+        Me.btnExit.Text = "E&xit"
         Me.btnExit.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 30)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 13)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Membership Number:"
-        '
-        'txtMembershipnumber
-        '
-        Me.txtMembershipnumber.Location = New System.Drawing.Point(119, 27)
-        Me.txtMembershipnumber.Name = "txtMembershipnumber"
-        Me.txtMembershipnumber.Size = New System.Drawing.Size(150, 20)
-        Me.txtMembershipnumber.TabIndex = 14
-        '
-        'btnFind
-        '
-        Me.btnFind.Location = New System.Drawing.Point(275, 25)
-        Me.btnFind.Name = "btnFind"
-        Me.btnFind.Size = New System.Drawing.Size(75, 23)
-        Me.btnFind.TabIndex = 15
-        Me.btnFind.Text = "Find"
-        Me.btnFind.UseVisualStyleBackColor = True
         '
         'frmMember
         '
@@ -277,9 +310,12 @@ Partial Class frmMember
     Friend WithEvents txtName As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnClear As Button
-    Friend WithEvents btnSave As Button
+    Friend WithEvents btnAdd As Button
     Friend WithEvents btnExit As Button
     Friend WithEvents btnFind As Button
     Friend WithEvents txtMembershipnumber As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents btnEdit As Button
+    Friend WithEvents btnEvents As Button
+    Friend WithEvents btnDelete As Button
 End Class

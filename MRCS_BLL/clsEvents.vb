@@ -3,13 +3,13 @@
     Private m_DOE As Date
     Private m_RegFee As Decimal
     Private m_Location As String
-    Private m_NumberOfLaps As Int32
+    Private m_NumberOfLaps As Integer
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(title As String, DOE As Date, regFee As Decimal, location As String, numberOfLaps As Int32)
+    Public Sub New(title As String, DOE As Date, regFee As Decimal, location As String, numberOfLaps As Integer)
         Me.m_Title = title
         Me.m_DOE = DOE
         Me.m_RegFee = regFee

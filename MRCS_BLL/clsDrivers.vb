@@ -85,4 +85,35 @@
         End Set
     End Property
 
+    Public Function CalculateMembershipNo() As String
+        Dim result As String
+        Dim rn As New Random
+        Dim ranNum = rn.Next(0, 999)
+
+        Dim by As String = String.Format("{0:yyyyMMdd}", Me.DOB)
+        Dim yr As String = String.Format("{0:yy}", Me.DateJoined)
+
+        result = yr & by & ranNum
+        Return result
+    End Function
+
+    Public Function CalculateCheckDigit() As Integer
+        Dim m As String
+        m = CInt(Me.MembershipNo)
+        Dim s As Integer
+        Dim r As Boolean = False
+
+        Dim memNum() As String
+        memNum = m.Split(" ")
+
+        For i = 0 To memNum.Length - 1
+            s = memNum(i)
+        Next
+
+        If s / 10 = 0 Then
+            r = True
+        End If
+        Return r
+    End Function
+
 End Class
