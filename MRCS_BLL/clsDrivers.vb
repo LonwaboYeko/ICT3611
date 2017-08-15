@@ -1,4 +1,5 @@
-﻿Public Class clsDrivers
+﻿<Serializable>
+Public Class clsDrivers
     Private m_MembershipNo As Long
     Private m_Name As String
     Private m_Surname As String
